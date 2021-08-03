@@ -1,0 +1,22 @@
+.image {
+  max-height: 96px !important;
+  max-width: 96px !important;
+  margin: auto !important;
+}
+
+@media (max-width: 770px) {
+  .card {
+    margin: 2% 0 !important;
+  }
+  .image {
+    width: 50%;
+  }
+}
+
+.hot {
+  color: rgb(235, 143, 143);
+}
+
+.cold {
+  color: rgb(166, 230, 223);
+}
