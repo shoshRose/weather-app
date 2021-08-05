@@ -1,21 +1,18 @@
 import express from 'express';
-import bodyParser  from 'body-parser';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import http from 'http';
 import weatherRoutes from './routes/weather.js';
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const app = express();
+const __dirname = path.resolve();
 
 app.use(cors());
 
-
-
-// console.log("here index.js", app);
-
-// const CONNECTION_URL = 'mongodb+srv://shosh:qwer1234@cluster0.hrptu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-// const PORT = process.env.PORT || 5000;
 
 // Server Setup
 const port = process.env.PORT || 5000
