@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { getWeather } from "../actions/weather";
 import { useDispatch } from "react-redux";
 
@@ -25,8 +26,8 @@ const EnterCity = () => {
 
     setIsLoading(true);
     setError(null);
+    console.log("isLoading", isLoading);
 
-    console.log("fetchWeatherHandler", city);
     try {
       const response = dispatch(getWeather(city));
 
@@ -53,7 +54,7 @@ const EnterCity = () => {
     <form onSubmit={fetchWeatherHandler}>
       <TextField
         id="standard-search"
-        label="Search field"
+        label="Enter City"
         type="search"
         onChange={changeCityHandler}
         value={city}
@@ -61,6 +62,7 @@ const EnterCity = () => {
       <IconButton color="primary" aria-label="Search">
         <SearchIcon />
       </IconButton>
+      {isLoading && <CircularProgress />}
     </form>
   );
 };
