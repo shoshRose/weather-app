@@ -9,7 +9,6 @@ const __dirname = path.dirname(__filename);
 
 
 const app = express();
-const __dirname = path.resolve();
 
 app.use(cors());
 
